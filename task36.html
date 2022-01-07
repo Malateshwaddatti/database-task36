@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <script src="testdemo21.js"></script>
+</head>
+<body>
+<!--Create database Student-->
+<!--use student-->
+<!--create table for users-->
+
+<!--1. Create tables for the above list given--->
+create table User(
+Student_id int not null unique,
+Student_Name varchar(20) not null,
+Student_Emailid varchar(50) not null unique,
+Gender varchar(10) not null,
+Age varchar(10) not null,
+City varchar(20) not null default('Banglore'),
+Student_activited_courses varchar(30) not null,
+Menters varchar(20)not null ,
+Courses varchar(30) not null,
+Tasks varchar(20) not null,
+Attendence varchar(10) not null unique
+);
+
+
+<!--inserting data into users table-->
+
+<!--2.insert at least 5 rows of values in each table-->
+insert into students.user(student_id,Student_name,Student_emailid,Gender,Age,City,Student_activited_courses,Menters,Courses,tasks,Attendence)
+values
+(1,"Jeevitja","Jeevitha@19gmail.com","Female",25,"Banglore","Machine Learning","Mohan","datascitenist","dsa and algoritham","5"),
+(2,"Yashu","yashu@25gmail.com","Male",30,"Mumabi","Full stack devolpers","html css javascript react js mysql ","Ragav kumar","Youtube clone","10"),
+(3,"Meerkumari","Meerakumari@12gmail.com","Female",30,"Chennai","Blackchaining devolpment","Maheshwarn","crypotograpy","digital currencey","25"),
+(4,"Govind","Govind@24gmail.com","Male",23,"Banglore","forentend devlopment","Jayadeva","html css javascript","html forms","20"),
+(5,"Ganesha","Ganesha@87gmail.com","Male",24,"Kerla","backend devolpment","Ragav Kumar","mysql Mongodb express node js","Rest api","42");
+
+
+
+    <!-- 3combine and display students_activated_courses and courses for a specific user groping them based on the course-->
+    
+    SELECT Student_Name,menters,Student_activited_courses FROM students.user
+    group by courses;
+
+    <!--4. list all the mentors-->
+    Select Menters FROM student.user;
+
+    <!--5.list the number of students that are assigned for a mentor-->
+    SELECT Student_Name,menters,Student_activited_courses FROM students.user
+    group by courses;
+
+
+    
+</body>
+</html>
